@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SwiftShop | The Future of Tech</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="announcement">
+      <p>
+        Join our membership for 20% off your first order •
+        <span>Learn More</span>
+      </p>
+    </div>
+
+    <header class="main-header">
+      <nav class="navbar">
+        <div class="nav-left">
+          <a href="#" class="logo">S<span>.</span>SHOP</a>
+          <ul class="nav-menu">
+            <li><a href="#">Newest</a></li>
+            <li><a href="#shop">Collection</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Journal</a></li>
+            <li><a href="#" class="sale-link">Outlet</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-right">
+          <div class="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="text"
+              placeholder="Quick Search..."
+              id="search-input"
+              onkeyup="searchProducts()"
+            />
+          </div>
+          <div class="nav-icons">
+            <a href="#"><i class="fa-regular fa-user"></i></a>
+            <a href="#"><i class="fa-regular fa-heart"></i></a>
+            <div class="cart-btn" onclick="toggleCart()">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span id="cart-count">0</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-badge">Evolution of Sound</div>
+        <h1>Sonic Architecture <br />for the Modern Mind.</h1>
+        <p>
+          Experience precision-engineered audio tools designed to help you
+          focus, create, and flow.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary">Explore Products</button>
+          <button class="btn-story">
+            <div class="play-icon"><i class="fa-solid fa-play"></i></div>
+            <span>Watch Story</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <main class="container" id="shop">
+      <div class="shop-top">
+        <div class="title-group">
+          <span class="sub-title">Selection 2025</span>
+          <h2>Editor's Choice</h2>
+        </div>
+        <div class="filter-pills">
+          <button class="pill active" onclick="filterProducts('all')">
+            View All
+          </button>
+          <button class="pill" onclick="filterProducts('Audio')">Audio</button>
+          <button class="pill" onclick="filterProducts('Computing')">
+            Tools
+          </button>
+          <button class="pill" onclick="filterProducts('Lifestyle')">
+            Gear
+          </button>
+        </div>
+      </div>
+
+      <div class="slider-container">
+        <div class="slider-controls">
+          <button class="s-btn" onclick="moveSlider(-1)">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button class="s-btn" onclick="moveSlider(1)">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+        <div class="product-grid-row" id="product-grid"></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="f-brand">
+          <a href="#" class="logo">S<span>.</span>SHOP</a>
+          <p>
+            Crafting tools for the modern digital explorer. Minimalist by
+            design, powerful by nature.
+          </p>
+          <div class="socials">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="f-links">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Sustainability</a>
+        </div>
+        <div class="f-links">
+          <h4>Support</h4>
+          <a href="#">Help Center</a>
+          <a href="#">Order Status</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <div class="f-newsletter">
+          <h4>Stay Updated</h4>
+          <p>Exclusive early access to new drops.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="email@example.com" />
+            <button type="button">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 SwiftShop Global. Built for the modern web.</p>
+        <div class="legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-drawer" id="cart-drawer">
+      <div class="cart-head">
+        <h3>Cart ( <span id="cart-count-inner">0</span> )</h3>
+        <button onclick="toggleCart()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="cart-body" id="cart-items"></div>
+      <div class="cart-footer">
+        <div class="total">
+          <span>Total</span>
+          <span id="cart-total">$0.00</span>
+        </div>
+        <button class="checkout-btn">Checkout Now</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
